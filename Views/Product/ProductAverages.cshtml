@@ -1,0 +1,54 @@
+﻿@model List<ProductSupplier.Models.Product>
+
+@{
+    ViewBag.Title = "ProductAveragePrice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .auto-style {
+        color: #FFFFFF;
+    }
+
+    .t {
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>
+<h2>Product Average Prices</h2>
+
+<div style="height: 250px; overflow: auto;">
+    <table class="table table-condensed table-hover" ">
+        <thead style="position: sticky;top: 0">
+            <tr bgcolor="#222222" class="auto-style">
+                <th width="33%">Product ID</th>
+                <th width="33%">Product Name</th>
+                <th width="33%">Average Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.ProductID</td>
+                    <td>@product.ProductName</td>
+                    <td>@product.Prices.Average(x => x.Price)</td>
+
+
+
+                    Complete this section
+
+                    In this line, complete the match statement (making use of lambda) that would present the price average of all the products.
+                    Hint – it is a very simple lambda statement that makes use of predeveloped LINQ / Lambda functionality.
+
+                    Focus on the AVERAGE price of products
+
+
+                    Complete this line
+
+
+                    Complete this section
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

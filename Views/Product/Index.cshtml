@@ -1,0 +1,230 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@*Do not edit thie page.*@
+
+<head>
+    <meta content="en-za" http-equiv="Content-Language">
+    <style type="text/css">
+        .auto-style1 {
+            border-width: 0px;
+        }
+
+        .auto-style2 {
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        .auto-style3 {
+            text-align: center;
+            border-style: solid;
+            border-width: 1px;
+        }
+    </style>
+</head>
+<h2>LINQ and LIST Activity</h2>
+<h2>Practical Activity – LISTS & LINQ (25 Marks)</h2>
+
+<p><strong>IMPORTANT NOTE:</strong> Refer to internal documentation to identify the sections to complete. You have an example in the notes relevant to this activity. <br />Remember that programming is patterns in context. <br />A "cheat sheet" can be found int "App_Data"</p>
+<p>Consider the content of the list to update the models and then subsequently the business / programming logic.</p>
+hr />
+
+<div style="height: 400px; overflow: auto;">
+
+
+    <h3>Introduction</h3>
+
+    <p>
+        Language-Integrated Query (LINQ) is the name for a set of technologies
+        based on the integration of query capabilities directly into the C#
+        language. Traditionally, queries against data are expressed as simple
+        strings without type checking at compile time or IntelliSense support.
+        Furthermore, you have to learn a different query language for each type of
+        data source: SQL databases, XML documents, various Web services, and so on.
+        With LINQ, a query is a first-class language construct, just like classes,
+        methods, events.
+    </p>
+    <p>
+        (<a href="https://docs.microsoft.com/en-us/dotnet/csharp/linq/" target="_blank">https://docs.microsoft.com/en-us/dotnet/csharp/linq/</a>)
+    </p>
+
+    <h3>Requirement for session:</h3>
+
+    <p>
+        Reading and reviewing material posted for session 16. [2022-08-02] Session
+        16 - List and LINQ
+    </p>
+    <p>
+        The purpose of this activity is to allow students to work with very simple
+        LINQ statements in relationship with Lists in MVC. LINQ becomes a much more
+        powerful tool when leveraged against databases, however, students first
+        need to understand how to formulate a query as associated with list data.
+        List data is a common and very convenient source of data in C#.
+    </p>
+
+    <h3>Additional useful resources for this activity</h3>
+    <p>
+        These are a couple of useful introductory resources that would assist in
+        solving a limited set of problems:
+    </p>
+    <ul>
+
+
+
+        <li>
+            LINQ in C#
+            <ul>
+                <li>
+                    <a href="https://docs.microsoft.com/en-us/dotnet/csharp/linq/linq-in-csharp" target="_blank">https://docs.microsoft.com/en-us/dotnet/csharp/linq/linq-in-csharp</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            Write LINQ queries in C#
+            <ul>
+                <li>
+                    <a href="https://docs.microsoft.com/en-us/dotnet/csharp/linq/write-linq-queries" target="blank">https://docs.microsoft.com/en-us/dotnet/csharp/linq/write-linq-queries</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            Learn LINQ (Language-Integrated Query)
+            <ul>
+                <li><a href="https://www.tutorialsteacher.com/linq" target="_blank">https://www.tutorialsteacher.com/linq</a> </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Objectives of this session:</h3>
+
+    <ul>
+        <li>
+            Establishing View Models that would act as an intermediary between lists
+            in a list repository (future database), and a controller.
+        </li>
+        <li>
+            Processing lists in terms of a controller.
+        </li>
+        <li>Filer data by means of simple LINQ (lambda) statements. </li>
+        <li>
+            As such, student haven been provided with a list of details (Models
+            ListRepository .cs)
+        </li>
+    </ul>
+
+    <h3>Tasks</h3>
+
+    <ul>
+        <li>
+            Complete the View Models
+        </li>
+        <li>
+            Complete the Controller
+        </li>
+        <li>Complete the LINQ Lambda statements in the controller </li>
+        <li>Complete the LINQ Lambda statements in the views. </li>
+    </ul>
+
+    <h3>Mark allocation</h3>
+
+    <ul>
+        <li>
+            Accessing Data in ListRepository.cs
+            <ul>
+                <li>
+                    X2 View Models (SupplierVM.cs & PriceRangeVM.cs) = <strong>
+                        <u>5 marks</u>
+                    </strong> (1 per line in ViewModels)
+                </li>
+                <li>
+                    X3 Data Models (ProdSupplier.cs, Supplier.cs & Product.cs) =
+                    <strong><u>8 marks</u></strong> (1 per line in models)
+                </li>
+            </ul>
+        </li>
+        <li>
+            Returning Product Averages
+            <ul>
+                <li>
+                    <strong><u>3 marks</u></strong> for query in product averages view.
+                </li>
+                <li>
+                    Make sure that prices are rounded of to 2 decimal points by means of
+                    Math Rounding
+                </li>
+            </ul>
+        </li>
+        <li>
+            Returning the Supplier Product Averages by accessing prodSupplier.cs
+            list, looping though the list and then storing data in a temporary
+            ViewModel. <strong><u>2 marks</u></strong> for returning the correct values
+            to the list.
+        </li>
+        <li>
+            Send the ViewModel to SupplierProductAverages.cshtml and then display the
+            values as an average with 2 decimal points. <strong><u>2 marks</u></strong>
+            for returning the correct values to the list.
+        </li>
+        <li>
+            Identifying a price range by calculating / identifying minimums and
+            maximums of prices. <strong><u>4 marks</u></strong> for identifying the
+            minimum and maximum values.
+        </li>
+        <li>
+            Complete the PriceRange in the controller, and then returning the
+            PriceRangeResult.cshtml view, where the product prices are displayed as a
+            product price average. <strong><u>1 mark</u></strong> for displaying the
+            average. This is only 1 mark as this is a repetitive method already used
+            and slightly adapted to present only an average.
+        </li>
+    </ul>
+
+
+<br />
+    <table class="auto-style1" style="width: 100%">
+        <tr>
+            <td class="auto-style2"><strong>REQUIREMENT</strong></td>
+            <td class="auto-style3"><strong>MAX ALLOCATION</strong></td>
+        </tr>
+        <tr>
+            <td class="auto-style2"><strong>1. </strong>ViewModels</td>
+            <td class="auto-style3">5 marks</td>
+        </tr>
+        <tr>
+            <td class="auto-style2"><strong>2. </strong>Data Models</td>
+            <td class="auto-style3">8 marks</td>
+        </tr>
+        <tr>
+            <td class="auto-style2"><strong>3. </strong>Product Averages</td>
+            <td class="auto-style3">3 marks</td>
+        </tr>
+        <tr>
+            <td class="auto-style2">
+                <strong>4. </strong>Supplier Product Averages -
+                ViewModel
+            </td>
+            <td class="auto-style3">2 marks</td>
+        </tr>
+        <tr>
+            <td class="auto-style2">
+                <strong>5. </strong>Supplier Product Averages -
+                SupplierProductAverages.cshtml
+            </td>
+            <td class="auto-style3">2 marks</td>
+        </tr>
+        <tr>
+            <td class="auto-style2"><strong>6. </strong>Range Calculations</td>
+            <td class="auto-style3">4 marks</td>
+        </tr>
+        <tr>
+            <td class="auto-style2"><strong>7. </strong>PriceRange</td>
+            <td class="auto-style3">1 mark</td>
+        </tr>
+        <tr>
+            <td class="auto-style2"><strong>TOTAL</strong></td>
+            <td class="auto-style3"><strong>25 marks</strong></td>
+        </tr>
+    </table>
+
+</div>

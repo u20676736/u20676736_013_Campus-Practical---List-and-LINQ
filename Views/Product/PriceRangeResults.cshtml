@@ -1,0 +1,70 @@
+﻿@model ProductSupplier.Models.PriceRangeVM
+
+@{
+    ViewBag.Title = "PriceRangeResults";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <style type="text/css">
+        .auto-style {
+            color: #FFFFFF;
+        }
+
+        .t {
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<h2>Product Price Range Results</h2>
+
+<h4>Showing Products with averages between: @Model.Min and @Model.Max </h4> 
+
+<div style="height: 250px; overflow: auto;">
+    <table class="table table-condensed table-hover">
+        <thead style="position: sticky;top: 0">
+            <tr bgcolor="#222222" class="auto-style">
+                <th width="33%">Product ID</th>
+                <th width="33%">Product Name</th>
+                <th width="33%">Best Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.Products)  
+                 { 
+            <tr>
+                <td>@product.ProductID</td>     
+                <td>@product.ProductName</td>  
+                <td>@product.Prices.Average(x => x.Price)</td>
+
+                Complete this section
+
+                In this line, complete the match statement (making use of lambda) that would present the price average of all the prices associated with the products.
+                  Hint – it is a very simple lambda statement that makes use of predeveloped LINQ / Lambda functionality.
+                    
+                  Focus on the AVERAGE Price of products. Round it to 2 decimal values.
+
+                Complete this line
+
+                @*This page is returned as a view, but does not have an event in the controller other than the event defined by the Range in the controller.
+
+                @*Complete this section*@
+
+            </tr>
+                }
+        </tbody>
+    </table>
+</div>
+</br>
+<form onsubmit="backFunction()">
+    <input type="submit" value="Back to Previous Page" class="btn btn-primary" />
+</form>
+
+<script type="text/javascript">
+    function backFunction() {
+        $(document).on('click', '#backLink', function () {
+            history.go(-1);
+        });
+    }
+</script>
